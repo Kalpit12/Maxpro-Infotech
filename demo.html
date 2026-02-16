@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Request Demo - Maxpro Infotech Limited</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="container nav-container">
+            <div class="logo">
+                <img src="https://maxproinfotech.com/wp-content/uploads/2024/01/MAXPRO-LOGO-FINAL-3.png" alt="Maxpro Infotech" class="logo-img">
+            </div>
+            <div class="nav-toggle" id="navToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="oursolutions.html">Our Solutions</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="faq.html">FAQ</a></li>
+                <li><a href="contact.html" class="btn-nav">Contact Us</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1 class="page-title">Request a Demo</h1>
+            <p class="page-subtitle">See our solutions in action - Book your personalized demo session</p>
+        </div>
+    </section>
+
+    <!-- Demo Request Section -->
+    <section class="section demo-section">
+        <div class="container">
+            <div class="demo-grid">
+                <!-- Demo Form -->
+                <div class="demo-form-container">
+                    <h2>Schedule Your Demo</h2>
+                    <p>Fill in your details and select a convenient time slot for your personalized demo session.</p>
+                    
+                    <form class="demo-form" id="demoForm">
+                        <div class="form-group">
+                            <label for="fullName">Full Name *</label>
+                            <input type="text" id="fullName" name="fullName" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email Address *</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phone">Phone Number *</label>
+                            <input type="tel" id="phone" name="phone" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="company">Company Name *</label>
+                            <input type="text" id="company" name="company" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="jobTitle">Job Title</label>
+                            <input type="text" id="jobTitle" name="jobTitle">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="product">Which solution are you interested in? *</label>
+                            <select id="product" name="product" required>
+                                <option value="">Select a product</option>
+                                <option value="maxsales">MaxSales Pro - Sales Force Automation</option>
+                                <option value="maxdistribute">MaxDistribute - Distribution Management</option>
+                                <option value="maxguard">MaxGuard - Security Management</option>
+                                <option value="maxb2b">MaxB2B - B2B Commerce Platform</option>
+                                <option value="maxanalytics">MaxAnalytics - Business Intelligence</option>
+                                <option value="maxai">MaxAI Suite - AI Automation</option>
+                                <option value="multiple">Multiple Products</option>
+                                <option value="consultation">General Consultation</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="employees">Number of Employees</label>
+                            <select id="employees" name="employees">
+                                <option value="">Select range</option>
+                                <option value="1-10">1-10</option>
+                                <option value="11-50">11-50</option>
+                                <option value="51-200">51-200</option>
+                                <option value="201-500">201-500</option>
+                                <option value="501+">501+</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Preferred Demo Date *</label>
+                            <div class="calendar-selector">
+                                <input type="date" id="demoDate" name="demoDate" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Preferred Time Slot *</label>
+                            <div class="time-slots">
+                                <label class="time-slot-option">
+                                    <input type="radio" name="timeSlot" value="09:00-10:00" required>
+                                    <span>09:00 - 10:00 AM</span>
+                                </label>
+                                <label class="time-slot-option">
+                                    <input type="radio" name="timeSlot" value="10:00-11:00">
+                                    <span>10:00 - 11:00 AM</span>
+                                </label>
+                                <label class="time-slot-option">
+                                    <input type="radio" name="timeSlot" value="11:00-12:00">
+                                    <span>11:00 AM - 12:00 PM</span>
+                                </label>
+                                <label class="time-slot-option">
+                                    <input type="radio" name="timeSlot" value="14:00-15:00">
+                                    <span>02:00 - 03:00 PM</span>
+                                </label>
+                                <label class="time-slot-option">
+                                    <input type="radio" name="timeSlot" value="15:00-16:00">
+                                    <span>03:00 - 04:00 PM</span>
+                                </label>
+                                <label class="time-slot-option">
+                                    <input type="radio" name="timeSlot" value="16:00-17:00">
+                                    <span>04:00 - 05:00 PM</span>
+                                </label>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Additional Notes (Optional)</label>
+                            <textarea id="message" name="message" rows="4" placeholder="Tell us about your specific needs or questions..."></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary btn-large">Book Demo Session</button>
+                    </form>
+                    
+                    <div class="form-success" id="demoSuccess">
+                        <div class="success-icon">✓</div>
+                        <h3>Demo Scheduled Successfully!</h3>
+                        <p>Thank you for booking a demo with us. We've sent a confirmation email with all the details and a calendar invite.</p>
+                        <p>Our team will contact you shortly to confirm your session.</p>
+                    </div>
+                </div>
+                
+                <!-- Demo Info Sidebar -->
+                <div class="demo-info-sidebar">
+                    <div class="demo-info-card">
+                        <h3>What to Expect</h3>
+                        <div class="demo-expectation">
+                            <div class="expectation-icon">🎯</div>
+                            <div class="expectation-content">
+                                <h4>Personalized Session</h4>
+                                <p>Tailored demo focusing on your specific business needs</p>
+                            </div>
+                        </div>
+                        <div class="demo-expectation">
+                            <div class="expectation-icon">⏱️</div>
+                            <div class="expectation-content">
+                                <h4>45-60 Minutes</h4>
+                                <p>Comprehensive walkthrough with time for Q&A</p>
+                            </div>
+                        </div>
+                        <div class="demo-expectation">
+                            <div class="expectation-icon">💻</div>
+                            <div class="expectation-content">
+                                <h4>Live Demonstration</h4>
+                                <p>See the actual product with real-world scenarios</p>
+                            </div>
+                        </div>
+                        <div class="demo-expectation">
+                            <div class="expectation-icon">📊</div>
+                            <div class="expectation-content">
+                                <h4>ROI Analysis</h4>
+                                <p>Understand the business value and benefits</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="demo-info-card">
+                        <h3>Contact Our Sales Team</h3>
+                        <div class="demo-contact-item">
+                            <div class="demo-contact-icon demo-contact-icon-email">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+                            </div>
+                            <div>
+                                <p class="demo-contact-label">Email</p>
+                                <a href="mailto:sharon.wazemba@maxproinfotech.com">sharon.wazemba@maxproinfotech.com</a><br>
+                                <a href="mailto:helpdesk@maxproinfotech.com">helpdesk@maxproinfotech.com</a>
+                            </div>
+                        </div>
+                        <div class="demo-contact-item">
+                            <div class="demo-contact-icon demo-contact-icon-phone">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1v3.15c0 .31-.2.6-.5.74-.24.11-.5.21-.76.3z"/></svg>
+                            </div>
+                            <div>
+                                <p class="demo-contact-label">Phone</p>
+                                <a href="tel:+254786658200">+254 786 658 200</a>
+                            </div>
+                        </div>
+                        <div class="demo-contact-item">
+                            <div class="demo-contact-icon demo-contact-icon-whatsapp">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                            </div>
+                            <div>
+                                <p class="demo-contact-label">WhatsApp</p>
+                                <a href="https://wa.me/254786658200">+254 786 658 200</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="demo-info-card alternate-option">
+                        <h3>Prefer to Talk First?</h3>
+                        <p>Not ready for a demo? Schedule a quick consultation call instead.</p>
+                        <a href="contact.html" class="btn btn-outline btn-block">Contact Us</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Demo -->
+    <section class="section why-demo-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title centered">Why Schedule a Demo?</h2>
+                <p class="section-subtitle">See firsthand how our solutions can transform your business</p>
+            </div>
+            <div class="why-demo-grid">
+                <div class="why-demo-card">
+                    <div class="why-demo-number">01</div>
+                    <h3>See Real Features</h3>
+                    <p>Experience the actual product interface and capabilities, not just screenshots or videos.</p>
+                </div>
+                <div class="why-demo-card">
+                    <div class="why-demo-number">02</div>
+                    <h3>Ask Questions</h3>
+                    <p>Get answers to your specific questions from our product experts in real-time.</p>
+                </div>
+                <div class="why-demo-card">
+                    <div class="why-demo-number">03</div>
+                    <h3>See Your Use Cases</h3>
+                    <p>We demonstrate how the solution addresses your unique business challenges.</p>
+                </div>
+                <div class="why-demo-card">
+                    <div class="why-demo-number">04</div>
+                    <h3>No Obligation</h3>
+                    <p>Free demonstration with no commitment required. Make an informed decision.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="section testimonial-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title centered">What Our Clients Say</h2>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p class="testimonial-text">
+                        "The demo session was incredibly insightful. The team understood our distribution challenges 
+                        and showed us exactly how MaxDistribute could solve them. We went live within a month!"
+                    </p>
+                    <div class="testimonial-author">
+                        <strong>James Kimani</strong>
+                        <span>Operations Manager, Kenya Distributors Ltd</span>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p class="testimonial-text">
+                        "The personalized demo helped us make our decision. Seeing our actual use cases demonstrated 
+                        gave us confidence that this was the right solution for our sales team."
+                    </p>
+                    <div class="testimonial-author">
+                        <strong>Grace Omondi</strong>
+                        <span>Sales Director, EastPharma Solutions</span>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p class="testimonial-text">
+                        "Excellent presentation! The team was professional, knowledgeable, and patient with all our 
+                        questions. MaxGuard has transformed how we manage our security workforce."
+                    </p>
+                    <div class="testimonial-author">
+                        <strong>Peter Mwangi</strong>
+                        <span>CEO, SecureGuard Services</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <img src="https://maxproinfotech.com/wp-content/uploads/2024/01/MAXPRO-LOGO-FINAL-3.png" alt="Maxpro Infotech" class="footer-logo">
+                    <p class="footer-tagline">Innovating for Africa's Growth</p>
+                    <p class="footer-text">
+                        Empowering businesses across Africa & beyond with intelligent, scalable ICT solutions 
+                        for over a decade.
+                    </p>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="oursolutions.html">Our Solutions</a></li>
+
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Solutions</h4>
+                    <ul class="footer-links">
+                        <li><a href="services.html#sales">Sales & Field Operations</a></li>
+                        <li><a href="services.html#logistics">Logistics & Distribution</a></li>
+                        <li><a href="services.html#inventory">Inventory Management</a></li>
+                        <li><a href="services.html#ai">AI Integration</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact Us</h4>
+                    <ul class="footer-contact">
+                        <li class="footer-contact-item">
+                            <svg class="footer-contact-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+                            <a href="mailto:helpdesk@maxproinfotech.com">helpdesk@maxproinfotech.com</a>
+                        </li>
+                        <li>📞 +254 786 658 200</li>
+                        <li>📍 Nairobi, Kenya</li>
+                    </ul>
+                    <div class="social-links">
+                        <a href="https://www.linkedin.com/showcase/maxproinfotechltd" class="social-icon" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+                        <a href="https://x.com/maxprokenya/" class="social-icon" target="_blank" rel="noopener noreferrer" aria-label="Twitter"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+                        <a href="https://api.whatsapp.com/send?phone=254786658200" class="social-icon" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
+                        <a href="https://www.instagram.com/maxpro_infotech_limited/?hl=en" class="social-icon" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Maxpro Infotech Limited. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Set minimum date to today
+        const today = new Date().toISOString().split('T')[0];
+        document.getElementById('demoDate').setAttribute('min', today);
+        
+        // Demo form submission
+        document.getElementById('demoForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            const formData = new FormData(e.target);
+            const data = Object.fromEntries(formData);
+            
+            console.log('Demo request submitted:', data);
+            
+            // Hide form and show success message
+            document.getElementById('demoForm').style.display = 'none';
+            document.getElementById('demoSuccess').classList.add('show');
+            
+            // Scroll to success message
+            document.getElementById('demoSuccess').scrollIntoView({ behavior: 'smooth', block: 'center' });
+        });
+    </script>
+</body>
+</html>
