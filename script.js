@@ -72,7 +72,7 @@ window.addEventListener('scroll', () => {
     lastScroll = currentScroll;
 });
 
-// Contact Form Submission - sends to FormSubmit.co (helpdesk@maxproinfotech.com)
+// Contact Form Submission - sends to Formspree
 const contactForm = document.getElementById('contactForm');
 const formSuccess = document.getElementById('formSuccess');
 const formError = document.getElementById('formError');
@@ -91,33 +91,33 @@ if (contactForm) {
         if (formError) formError.classList.remove('show');
         
         try {
+            const endpoint = contactForm.getAttribute('action') || 'https://formspree.io/f/mgolyprk';
             const formData = new FormData(contactForm);
-            const data = Object.fromEntries(formData.entries());
-            
-            // Add subject for email
-            data._subject = `Contact Form: ${data.firstName} ${data.lastName} from ${data.company}`;
-            data._replyto = data.email;
-            
-            const response = await fetch('https://formsubmit.co/ajax/helpdesk@maxproinfotech.com', {
+            formData.append('subject', `Contact Form: ${formData.get('firstName') || ''} ${formData.get('lastName') || ''}`.trim());
+
+            const response = await fetch(endpoint, {
                 method: 'POST',
-                headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-                body: JSON.stringify(data)
+                body: formData,
+                headers: { 'Accept': 'application/json' }
             });
-            
-            const result = await response.json();
-            
-            if (response.ok && (result.success === true || result.success === 'true')) {
+
+            if (response.ok) {
                 contactForm.style.display = 'none';
                 formSuccess.classList.add('show');
                 formSuccess.scrollIntoView({ behavior: 'smooth', block: 'center' });
                 contactForm.reset();
             } else {
-                throw new Error(result.message || 'Submission failed');
+                let message = 'Submission failed. Please try again.';
+                try {
+                    const result = await response.json();
+                    if (result?.errors?.length) message = result.errors.map(e => e.message).join(' ');
+                } catch (_) {}
+                throw new Error(message);
             }
         } catch (err) {
             console.error('Form submission error:', err);
             if (formError) {
-                formError.textContent = 'Something went wrong. Please try again or email us directly at helpdesk@maxproinfotech.com';
+                formError.textContent = 'Something went wrong. Please try again or email us directly at samanthasyokau2017@gmail.com';
                 formError.classList.add('show');
             }
             submitBtn.disabled = false;
@@ -223,12 +223,16 @@ if (contactForm) {
 // Add loading state to buttons
 document.querySelectorAll('button[type="submit"]').forEach(button => {
     button.addEventListener('click', function(e) {
-        if (this.form && this.form.checkValidity()) {
+        if (!this.form) return;
+        if (this.form.dataset.managedSubmit === 'true') return;
+
+        if (this.form.checkValidity()) {
+            this.dataset.originalText = this.dataset.originalText || this.textContent;
             this.textContent = 'Sending...';
             this.disabled = true;
-            
+
             setTimeout(() => {
-                this.textContent = 'Send Message';
+                this.textContent = this.dataset.originalText || this.textContent;
                 this.disabled = false;
             }, 2000);
         }

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-label="Tech sales illustration">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#004A99"/>
+      <stop offset="0.6" stop-color="#0066CC"/>
+      <stop offset="1" stop-color="#0B2D55"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#FF6B35" stop-opacity="0.95"/>
+      <stop offset="1" stop-color="#FFD166" stop-opacity="0.15"/>
+    </linearGradient>
+    <pattern id="dots" width="28" height="28" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="2" fill="#FFFFFF" opacity="0.12"/>
+    </pattern>
+    <filter id="softShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="14" stdDeviation="18" flood-color="#001427" flood-opacity="0.35"/>
+    </filter>
+  </defs>
+
+  <rect width="1600" height="900" fill="url(#bg)"/>
+  <rect width="1600" height="900" fill="url(#dots)"/>
+
+  <!-- Accent ribbon -->
+  <path d="M0 680 C260 600, 520 760, 820 690 S1380 620, 1600 700 L1600 900 L0 900 Z"
+        fill="url(#accent)" opacity="0.85"/>
+
+  <!-- Laptop -->
+  <g filter="url(#softShadow)">
+    <rect x="260" y="210" width="780" height="470" rx="26" fill="#0E2E57" opacity="0.95"/>
+    <rect x="290" y="240" width="720" height="410" rx="18" fill="#071A33"/>
+    <g opacity="0.9">
+      <rect x="340" y="300" width="320" height="26" rx="13" fill="#FFFFFF" opacity="0.12"/>
+      <rect x="340" y="340" width="420" height="18" rx="9" fill="#FFFFFF" opacity="0.10"/>
+      <rect x="340" y="372" width="380" height="18" rx="9" fill="#FFFFFF" opacity="0.10"/>
+      <rect x="340" y="404" width="260" height="18" rx="9" fill="#FFFFFF" opacity="0.10"/>
+    </g>
+
+    <!-- Sales chart -->
+    <g transform="translate(720 320)">
+      <rect x="0" y="0" width="250" height="190" rx="16" fill="#0B2447" opacity="0.85" stroke="#2C7BE5" stroke-opacity="0.35"/>
+      <path d="M24 150 L72 112 L110 124 L148 82 L186 96 L226 54" fill="none" stroke="#FF6B35" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+      <circle cx="72" cy="112" r="9" fill="#FF6B35"/>
+      <circle cx="148" cy="82" r="9" fill="#FF6B35"/>
+      <circle cx="226" cy="54" r="9" fill="#FF6B35"/>
+      <rect x="24" y="24" width="110" height="16" rx="8" fill="#FFFFFF" opacity="0.10"/>
+    </g>
+
+    <!-- Laptop base -->
+    <path d="M220 690 H1080 C1126 690 1164 722 1172 768 H128 C136 722 174 690 220 690 Z"
+          fill="#0A2040"/>
+    <rect x="520" y="705" width="260" height="22" rx="11" fill="#FFFFFF" opacity="0.10"/>
+  </g>
+
+  <!-- Phone (field sales) -->
+  <g filter="url(#softShadow)">
+    <rect x="1080" y="310" width="220" height="420" rx="34" fill="#0E2E57" opacity="0.95"/>
+    <rect x="1102" y="352" width="176" height="328" rx="22" fill="#071A33"/>
+    <circle cx="1190" cy="336" r="8" fill="#FFFFFF" opacity="0.35"/>
+    <rect x="1130" y="382" width="120" height="16" rx="8" fill="#FFFFFF" opacity="0.10"/>
+    <g transform="translate(1120 430)" opacity="0.95">
+      <path d="M40 170 C56 118, 94 92, 130 64 C150 48, 158 30, 176 22" fill="none" stroke="#2C7BE5" stroke-width="10" stroke-linecap="round"/>
+      <circle cx="176" cy="22" r="10" fill="#2C7BE5"/>
+      <circle cx="40" cy="170" r="10" fill="#2C7BE5"/>
+      <circle cx="106" cy="86" r="10" fill="#FF6B35"/>
+    </g>
+  </g>
+
+  <!-- Floating nodes -->
+  <g opacity="0.65">
+    <circle cx="210" cy="170" r="10" fill="#FF6B35"/>
+    <circle cx="1410" cy="190" r="10" fill="#FF6B35"/>
+    <circle cx="1350" cy="780" r="10" fill="#2C7BE5"/>
+    <circle cx="320" cy="780" r="10" fill="#2C7BE5"/>
+  </g>
+</svg>

@@ -50,7 +50,9 @@
                     <h2>Schedule Your Demo</h2>
                     <p>Fill in your details and select a convenient time slot for your personalized demo session.</p>
                     
-                    <form class="demo-form" id="demoForm">
+                    <form class="demo-form" id="demoForm" action="https://formspree.io/f/mgolyprk" method="POST" data-managed-submit="true">
+                        <input type="hidden" name="form_type" value="Demo Request">
+                        <input type="hidden" name="source_page" value="demo.html">
                         <div class="form-group">
                             <label for="fullName">Full Name *</label>
                             <input type="text" id="fullName" name="fullName" required>
@@ -154,6 +156,7 @@
                         <p>Thank you for booking a demo with us. We've sent a confirmation email with all the details and a calendar invite.</p>
                         <p>Our team will contact you shortly to confirm your session.</p>
                     </div>
+                    <div class="form-error" id="demoError" role="alert"></div>
                 </div>
                 
                 <!-- Demo Info Sidebar -->
@@ -369,21 +372,56 @@
         const today = new Date().toISOString().split('T')[0];
         document.getElementById('demoDate').setAttribute('min', today);
         
-        // Demo form submission
-        document.getElementById('demoForm').addEventListener('submit', (e) => {
+        // Demo form submission (Formspree)
+        document.getElementById('demoForm').addEventListener('submit', async (e) => {
             e.preventDefault();
-            
-            const formData = new FormData(e.target);
-            const data = Object.fromEntries(formData);
-            
-            console.log('Demo request submitted:', data);
-            
-            // Hide form and show success message
-            document.getElementById('demoForm').style.display = 'none';
-            document.getElementById('demoSuccess').classList.add('show');
-            
-            // Scroll to success message
-            document.getElementById('demoSuccess').scrollIntoView({ behavior: 'smooth', block: 'center' });
+
+            const form = e.target;
+            const endpoint = form.getAttribute('action') || 'https://formspree.io/f/mgolyprk';
+            const submitBtn = form.querySelector('button[type="submit"]');
+            const demoError = document.getElementById('demoError');
+
+            if (demoError) demoError.classList.remove('show');
+            if (submitBtn) {
+                submitBtn.disabled = true;
+                submitBtn.dataset.originalText = submitBtn.dataset.originalText || submitBtn.textContent;
+                submitBtn.textContent = 'Sending...';
+            }
+
+            try {
+                const formData = new FormData(form);
+                const response = await fetch(endpoint, {
+                    method: 'POST',
+                    body: formData,
+                    headers: { 'Accept': 'application/json' }
+                });
+
+                if (response.ok) {
+                    // Hide form and show success message
+                    form.style.display = 'none';
+                    document.getElementById('demoSuccess').classList.add('show');
+                    document.getElementById('demoSuccess').scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    form.reset();
+                    return;
+                }
+
+                let message = 'Something went wrong. Please try again.';
+                try {
+                    const result = await response.json();
+                    if (result?.errors?.length) message = result.errors.map(e => e.message).join(' ');
+                } catch (_) {}
+                throw new Error(message);
+            } catch (err) {
+                console.error('Demo form submission error:', err);
+                if (demoError) {
+                    demoError.textContent = err?.message || 'Something went wrong. Please try again.';
+                    demoError.classList.add('show');
+                }
+                if (submitBtn) {
+                    submitBtn.disabled = false;
+                    submitBtn.textContent = submitBtn.dataset.originalText || 'Book Demo Session';
+                }
+            }
         });
     </script>
 </body>

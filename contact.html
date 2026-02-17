@@ -50,7 +50,9 @@
                     <h2>Send Us a Message</h2>
                     <p>Fill out the form below and we'll get back to you within 24 hours.</p>
                     
-                    <form class="contact-form" id="contactForm">
+                    <form class="contact-form" id="contactForm" action="https://formspree.io/f/mgolyprk" method="POST" data-managed-submit="true">
+                        <input type="hidden" name="form_type" value="Contact Us">
+                        <input type="hidden" name="source_page" value="contact.html">
                         <div class="form-row">
                             <div class="form-group">
                                 <label for="firstName">First Name *</label>
