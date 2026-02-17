@@ -1354,6 +1354,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .product-card-large {
+    display: flex;
+    flex-direction: column;
     background: var(--white);
     padding: 2.5rem;
     border-radius: 20px;
@@ -1466,7 +1468,10 @@ h1, h2, h3, h4, h5, h6 {
 
 .product-actions {
     display: flex;
+    flex-wrap: nowrap;
     gap: 1rem;
+    margin-top: auto;
+    align-items: center;
 }
 
 /* Integration & Deployment Sections */
