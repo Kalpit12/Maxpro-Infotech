@@ -1076,9 +1076,9 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .team-photo {
-    width: clamp(72px, 6vw, 88px);
-    height: clamp(72px, 6vw, 88px);
-    margin: 0 auto 0.75rem;
+    width: clamp(96px, 7vw, 120px);
+    height: clamp(96px, 7vw, 120px);
+    margin: 0 auto 1rem;
     border-radius: 50%;
     overflow: hidden;
 }
