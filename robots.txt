@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# Private campaign page — do not index
+Disallow: /campaign/

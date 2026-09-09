@@ -1,0 +1,383 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background: #050b12;
+  color: #ffffff;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  position: relative;
+  overflow-x: hidden;
+}
+
+.bg-glow {
+  position: fixed;
+  width: 420px;
+  height: 420px;
+  border-radius: 50%;
+  filter: blur(90px);
+  opacity: 0.35;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.bg-glow-left {
+  top: 20%;
+  left: -120px;
+  background: #2effa0;
+}
+
+.bg-glow-right {
+  bottom: 15%;
+  right: -120px;
+  background: #00b8ff;
+}
+
+.bg-grid {
+  position: fixed;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(126, 246, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(126, 246, 255, 0.04) 1px, transparent 1px);
+  background-size: 48px 48px;
+  mask-image: radial-gradient(ellipse at center, black 20%, transparent 75%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.vote-page {
+  position: relative;
+  z-index: 1;
+  min-height: 100svh;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+  align-items: center;
+  gap: clamp(20px, 4vw, 48px);
+  padding: 24px clamp(16px, 3vw, 40px);
+}
+
+.center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.vote-link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  text-decoration: none;
+}
+
+.poster {
+  display: block;
+  width: auto;
+  height: auto;
+  max-width: min(100%, 480px);
+  max-height: calc(100svh - 120px);
+  object-fit: contain;
+}
+
+.vote-now {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: clamp(22px, 4vw, 36px);
+  font-weight: 900;
+  letter-spacing: 0.12em;
+  color: #7ef6ff;
+  text-shadow:
+    0 0 8px rgba(0, 229, 255, 0.95),
+    0 0 22px rgba(0, 229, 255, 0.85),
+    0 0 48px rgba(0, 184, 255, 0.7);
+  animation: float-cta 2.6s ease-in-out infinite;
+}
+
+.vote-hint {
+  margin: 0;
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.55);
+  text-align: center;
+}
+
+.vote-hint strong {
+  color: #7ef6ff;
+}
+
+.arrow {
+  display: inline-block;
+  font-size: 1.15em;
+  animation: arrow-slide 1s ease-in-out infinite;
+}
+
+.side-panel {
+  max-width: 280px;
+  padding: 20px 0;
+}
+
+.side-left {
+  justify-self: end;
+  text-align: right;
+}
+
+.side-right {
+  justify-self: start;
+  text-align: left;
+}
+
+.side-tag {
+  margin: 0 0 16px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #2effa0;
+}
+
+.side-right .side-tag {
+  color: #7ef6ff;
+}
+
+.side-headline {
+  margin: 0 0 24px;
+  font-size: clamp(20px, 2.2vw, 28px);
+  font-weight: 800;
+  line-height: 1.25;
+  letter-spacing: 0.02em;
+}
+
+.side-headline span {
+  color: #7ef6ff;
+}
+
+.side-list {
+  margin: 0 0 28px;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.side-list li {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.side-icon {
+  font-size: 16px;
+}
+
+.side-quote {
+  margin: 0;
+  font-size: 15px;
+  font-style: italic;
+  color: rgba(255, 255, 255, 0.65);
+}
+
+.side-stat {
+  margin-bottom: 20px;
+}
+
+.stat-number {
+  display: block;
+  font-size: clamp(36px, 4vw, 48px);
+  font-weight: 900;
+  line-height: 1;
+  color: #7ef6ff;
+  text-shadow: 0 0 30px rgba(0, 184, 255, 0.5);
+}
+
+.stat-label {
+  display: block;
+  margin-top: 4px;
+  font-size: 13px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.side-body {
+  margin: 0 0 12px;
+  font-size: 14px;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.side-body.muted {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 13px;
+}
+
+.side-brands {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 20px;
+}
+
+.brand-pill {
+  padding: 6px 12px;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+.brand-green {
+  background: rgba(46, 255, 160, 0.12);
+  color: #2effa0;
+  border: 1px solid rgba(46, 255, 160, 0.3);
+}
+
+.brand-blue {
+  background: rgba(0, 184, 255, 0.12);
+  color: #7ef6ff;
+  border: 1px solid rgba(0, 184, 255, 0.3);
+}
+
+@keyframes float-cta {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+@keyframes arrow-slide {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(10px);
+  }
+}
+
+@media (max-width: 960px) {
+  .vote-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 20px 16px 32px;
+  }
+
+  .side-panel {
+    width: 100%;
+    max-width: 480px;
+    padding: 18px 20px;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(126, 246, 255, 0.12);
+    border-radius: 16px;
+  }
+
+  .side-left,
+  .side-right {
+    justify-self: auto;
+    text-align: center;
+  }
+
+  .side-left {
+    order: 1;
+  }
+
+  .center {
+    order: 2;
+    width: 100%;
+  }
+
+  .side-right {
+    order: 3;
+  }
+
+  .side-headline {
+    font-size: 22px;
+    margin-bottom: 16px;
+  }
+
+  .side-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-bottom: 16px;
+  }
+
+  .side-list li {
+    justify-content: center;
+    font-size: 13px;
+    padding: 8px;
+    background: rgba(46, 255, 160, 0.06);
+    border-radius: 10px;
+  }
+
+  .side-quote {
+    font-size: 14px;
+  }
+
+  .side-stat {
+    display: inline-block;
+    width: 48%;
+    margin-bottom: 12px;
+    vertical-align: top;
+  }
+
+  .stat-number {
+    font-size: 36px;
+  }
+
+  .side-brands {
+    justify-content: center;
+  }
+
+  .poster {
+    max-width: min(100%, 360px);
+    max-height: none;
+  }
+}
+
+@media (max-width: 600px) {
+  .vote-page {
+    padding: 16px 12px 28px;
+    gap: 16px;
+  }
+
+  .side-panel {
+    padding: 16px;
+    border-radius: 14px;
+  }
+
+  .side-list {
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+  }
+
+  .side-list li {
+    flex-direction: column;
+    gap: 4px;
+    font-size: 12px;
+  }
+
+  .vote-now {
+    font-size: 22px;
+  }
+
+  .poster {
+    max-width: min(100%, 320px);
+  }
+}
