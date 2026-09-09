@@ -102,18 +102,33 @@ body {
 }
 
 .vote-now {
-  display: flex;
+  display: inline-flex;
   align-items: center;
   gap: 10px;
+  margin: 0;
   font-size: clamp(22px, 4vw, 36px);
   font-weight: 900;
   letter-spacing: 0.12em;
   color: #7ef6ff;
+  text-decoration: none;
   text-shadow:
     0 0 8px rgba(0, 229, 255, 0.95),
     0 0 22px rgba(0, 229, 255, 0.85),
     0 0 48px rgba(0, 184, 255, 0.7);
   animation: float-cta 2.6s ease-in-out infinite;
+}
+
+.side-vote {
+  margin-top: 8px;
+}
+
+.side-left .side-vote {
+  justify-content: flex-end;
+}
+
+.center .side-quote {
+  text-align: center;
+  margin-top: 4px;
 }
 
 .vote-hint {
@@ -354,6 +369,11 @@ body {
 
   .side-quote {
     font-size: 14px;
+  }
+
+  .side-left .side-vote {
+    justify-content: center;
+    width: 100%;
   }
 
   .side-stat {
